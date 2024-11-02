@@ -1,0 +1,136 @@
+@model Receituario;
+@using Hsf_Receitas.Models;
+@using Hsf_Receitas.Data;
+
+@{
+    ViewData["title"] = "Vizualização do atestado de comparecimento";
+    
+    HSFContext database = new HSFContext();
+
+    List<Receituario> prescriptionList = database.Receitas.Where(m => m.Id ==
+    Model.Id).ToList();
+
+    List<AtestadoMedico> atmList = database.AtestadosMedico.Where(m => m.ReceituarioId ==
+    Model.Id).ToList();
+
+    var atmData = @Model.DateOfMedicalAppoiment.ToString("dd");
+}
+
+<div class="view-presc">
+
+    <div class="header-show-prescription mt-4 ml-2">
+
+        <div class="header-img mt-2 mb-2">
+            <img src="../images/logotipo-hospital-sao-francisco.png" alt="logotipo da vizualização do receituário comum">
+        </div>
+
+        <div class="show-logo mt-3 mb-2">
+            <h2 style="text-decoration: underline 2px solid #007bff;">FUNDAÇÃO DE SAÚDE TRÊS MARIAS</h2>
+            <h2>HOSPITAL SÃO FRANCISCO</h2>
+        </div>
+
+    </div>
+
+    <div class="show-body-atm">
+
+        <div class="atm-title">
+            <h1 class="text-center">ATESTADO MÉDICO</h1>
+        </div>
+
+        <div class="prescription-data-atm">
+
+            @foreach (var item in atmList)
+            {
+                <article class="text-primary atm-article">
+
+                    <p class="p1">Atesto para os devido fins que o(a) Sr.(a)</p>
+
+                    <div class="atm-pacient">
+                        <span class="text-center ml-2">@item.PacientName</span>
+                    </div>
+
+                    <div class="row">
+                        
+                        <p class="p2">foi atendido(a) na unidade de</p>
+
+                        <div class="atm-MedicUnity">
+                            <span class="">@item.MedicUnity</span>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <p class="p3">do</p>
+
+                        <div class="atm-Local">
+                            <span class="">Hospital Municipal de Três Marias</span>
+                        </div>
+
+                        <p class="p3 ml-2">no dia</p>
+
+                        <div class="atm-Data">
+                            <span class="">@atmData</span>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <p class="p5">às</p>
+
+                        <div class="atm-Time">
+                            <span class=""></span>
+                        </div>
+
+                        <p class="p5 ml-2">horas. Necessitando de</p>
+
+                        <div class="atm-RestDays">
+                            <span class="">@item.RestDays</span>
+                        </div>
+
+                        <p class="p5 ml-2">dias de repouso.</p>
+
+                    </div>
+
+                    <div class="atm-card-footer">
+
+                        <div class="row">
+                                    
+                            <p class="">CID :</p>
+
+                            <div class="atm-Time">
+                                <span>@item.CID</span>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            @foreach (var p in prescriptionList)
+                            {
+                                <p class="">Data :</p>
+
+                                <div class="atm-Time">
+                                    <span>@p.DateOfMedicalAppoiment.ToString("dd/MM/yyyy")</span>
+                                </div>
+                            }
+
+                        </div>
+                                    
+                    </div>
+
+                </article>
+            }
+
+        </div>
+
+    </div>
+
+    <div class="show-footer">
+        <P>BR 040 - KM 438 - BRASÍLIA / BELO HORIZONTE - TEL.: (38) 3754-1256</P>
+        <p><span>PARQUE DIADORIM</span> - CEP: 39205-000 - TRÊS MARIAS - MINAS GERAIS</p>
+        <div class="line"></div>
+    </div>
+
+</div>

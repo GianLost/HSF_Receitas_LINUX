@@ -1,0 +1,367 @@
+/*Estilização da View Prescription*/
+
+.prescription {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    background-image: url("../images/bg-medic.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.card {
+    margin-top: 2%;
+}
+
+.card:first-child {
+    background-color: #ffffff90;
+}
+
+.card-header {
+    background-color: #007bff;
+}
+
+.prescription-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("../images/doctor-medical.jpg");
+    width: 100%;
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.prescription-card-body label {
+    margin-left: 8vh;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+.prescription-card-body input {
+    font-size: 11pt;
+    color: #007bffc3;
+    width: 50vh;
+    margin-left: 8vh;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: #ffffffbc;
+    height: 5vh;
+    border-bottom-width: 2px;
+    opacity: 100%;
+}
+
+.prescription-card-body input::placeholder {
+    color: #007bffc3;
+}
+
+.prescription-card-body input:focus {
+    box-shadow: none;
+    background-color: #f2f0f0ac;
+    color: #007bffc3;
+}
+
+#dataAppoiment {
+    width: 25vh;
+}
+
+#up-dataAppoiment {
+    width: 25vh;
+}
+
+.send-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    width: 9vh;
+    height: 9vh;
+    border-radius: 50%;
+    margin-left: 8vh;
+}
+
+.send-button:hover {
+    box-shadow: 0px 3px 15px #007bff;
+    border-radius: 30%;
+    transition: ease-in-out 0.3s;
+}
+
+.btn-printer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.btn-printer span {
+    margin-right: 6px;
+}
+
+#save-icon {
+    margin: auto;
+    font-size: 1.6em;
+}
+
+#save-icon:hover {
+    font-size: 1.7em;
+}
+
+.button-prescription {
+    width: 93%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-bottom: 1.5vh;
+    margin-top: 2vh;
+}
+
+.medic-btn:hover {
+    cursor: not-allowed;
+}
+
+.card-viewer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120vh;
+    margin-bottom: -8vh;
+}
+
+.view-presc {
+    margin-top: 0%;
+    margin-bottom: 12vh;
+    width: 100%;
+    height: 90%;
+}
+
+.header-show-prescription {
+    width: 97%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 4vh;
+}
+
+.header-img img {
+    width: 20vh;
+    height: 13vh;
+}
+
+.show-logo {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.show-logo h1 {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #007bff;
+
+}
+
+.show-logo h2 {
+    font-size: 1em;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.show-logo h2:nth-child(2) {
+    text-decoration: underline 2px solid #007bff;
+}
+
+.prescription-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 20vh;
+}
+
+.inputs {
+    display: flex;
+    width: 60vh;
+    height: 5vh;
+    padding: 1.5%;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    align-items: center;
+    color: #007bff;
+    font-size: 1.8vh;
+}
+
+.inputs span {
+    margin-left: 1%;
+}
+
+.inputs p {
+    font-weight: bold;
+}
+
+.medicacoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75vh;
+    margin: auto;
+    padding: 1%;
+
+}
+
+.medicacoes h3 {
+    font-size: 18pt;
+}
+
+.show-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    width: 100%;
+    line-height: 0.5em;
+    font-size: 9pt;
+    bottom: 2vh;
+}
+
+.show-footer p {
+    color: #007bff;
+}
+
+.show-footer span {
+    font-weight: bold;
+}
+
+.line {
+    width: 85%;
+    height: 2px;
+    background-color: #007bff;
+}
+
+/*Fim da estilização da View Prescription*/
+
+
+/*Estilização da View CreatePrescription*/
+
+#up-save-icon {
+    margin: auto;
+    font-size: 1.6em;
+}
+
+#up-save-icon:hover {
+    font-size: 1.7em;
+}
+
+.list-visualization {
+    width: 100%;
+    height: 55vh;
+
+}
+
+.list-visualization tr>th:first-child,
+.list-visualization tr>th:nth-child(2),
+.list-visualization tr>th:nth-child(3),
+.list-visualization tr>th:nth-child(4),
+.list-visualization tr>th:nth-child(5),
+.list-visualization tr>th:nth-child(6) {
+    width: 1%;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.list-visualization tr>td:first-child,
+.list-visualization tr>td:nth-child(2),
+.list-visualization tr>td:nth-child(3),
+.list-visualization tr>td:nth-child(4),
+.list-visualization tr>td:nth-child(5),
+.list-visualization tr>td:nth-child(6) {
+    height: 1%;
+    white-space: nowrap;
+    text-align: left;
+    font-size: 9pt;
+}
+
+.list-visualization thead {
+    font-size: 9pt;
+}
+
+.border-table {
+    width: 100%;
+    border: 1px solid #007bff;
+    padding: 0%;
+    margin: 0%;
+}
+
+.border-line {
+    width: 100%;
+    border: 1px solid #007bff;
+    padding: 0%;
+    margin: 0%;
+}
+
+.border-line2 {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/*Fim da estilização da View CreatePrescription*/
+
+/* Estilização dos aria-label */
+
+[aria-label] {
+    position: relative;
+}
+
+[aria-label]::after {
+    content: attr(aria-label);
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 3em;
+    bottom: -6em;
+    z-index: 1;
+    pointer-events: none;
+    padding: 8px 10px;
+    text-decoration: none;
+    font-size: .7em;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #fff;
+    background-color: #080503a9;
+    border-radius: 0px 8px 8px 8px;
+}
+
+[aria-label]:hover::after {
+    width: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.btn-blank[aria-label]:hover::after {
+    height: 10vh;
+    font-size: 0.8em;
+}
+
+/* Fim da estilização dos aria-label */
+#routeAdministration {
+    background-color: #007bff;
+    color: #fff;
+}
+/*@media*/
+
+@media (max-width: 768px) {
+    
+}

@@ -1,0 +1,123 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+.div-logo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    padding: 0;
+}
+
+.div-logo a {
+    font-size: 6vh;
+    text-align: center;
+    margin-right: 2em;
+}
+
+.div-logo img:hover {
+    transform: translateY(-3px);
+    transition: ease-in-out 0.5s;
+}
+
+.line-header-top {
+    width: 100%;
+    background-color: #90EED7;
+    padding: 1%;
+    margin-bottom: 0.5%;
+}
+
+.line-header-bottom {
+    position: relative;
+    align-items: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 12vh;
+    margin-bottom: -1vh;
+    background-color: #007bff;
+}
+
+.hospital-logo-img {
+    width: 20vh;
+    margin-top: -25%;
+    -webkit-filter: drop-shadow(0px 0px 5px rgba(0 0 0 / 90%));
+    filter: drop-shadow(-5px 0px 5px rgba(0 0 0 / 90%));
+}
+
+.logotipo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 90vh;
+    height: 100%;
+    text-shadow: -5px 0px 5px rgba(33, 33, 33, 0.7);
+}
+
+.logotipo a {
+    color: #fff;
+    margin-left: 5%;
+}
+
+.logotipo a:hover {
+    text-decoration: none;
+    transform: translateY(-3px);
+    transition: ease-in-out 0.5s;
+}
+
+.logotipo img {
+    width: 1.5em;
+    height: 1.5em;
+    margin: 2vh 2vh;
+    color: #fff;
+}
+
+.logotipo img:hover {
+    transform: none;
+    transition: none;
+}
+
+#medic-logo-image {
+    -webkit-filter: drop-shadow(0px 0px 5px rgba(0 0 0 / 90%));
+    filter: drop-shadow(-5px 0px 5px rgba(0 0 0 / 90%));
+}
+
+@media (max-width: 768px) {
+
+    .line-header-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hospital-logo-img {
+        display: none;
+    }
+
+    .logotipo {
+        position: absolute;
+        width: 100%;
+    }
+
+    .logotipo a {
+        font-size: 5vh;
+        text-shadow: none;
+    }
+
+    #medic-logo-image {
+        -webkit-filter: none;
+        filter: none;
+    }
+
+    .logotipo a:hover {
+        text-decoration: none;
+        transform: none;
+        transition: none;
+    }    
+
+}

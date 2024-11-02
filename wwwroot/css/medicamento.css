@@ -1,0 +1,185 @@
+.medicament {
+  margin-bottom: 3vh;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+}
+
+.border-medic {
+
+  border-bottom: 1px dashed #007bff;
+  font-size: 14px;
+}
+
+.medic-list {
+  padding: 0%;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 4vh;
+}
+
+.medic-list-table {
+  height: 5em;
+  margin-bottom: 0%;
+}
+
+.medic-list-table tr>th:first-child,
+.medic-list-table tr>th:nth-child(3),
+.medic-list-table tr>th:nth-child(4),
+.medic-list-table tr>th:nth-child(5),
+.medic-list-table tr>th:nth-child(6) {
+  width: 1%;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.medic-list-table tr>td:first-child .medic-list-table tr>td:nth-child(3),
+.medic-list-table tr>td:nth-child(4),
+.medic-list-table tr>td:nth-child(5),
+.medic-list-table tr>th:nth-child(6),
+.medic-list-table tr>td:nth-child(2) {
+  height: 1%;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* Início da estilização do modal de inserção de medicamento */
+
+.medicament-atribbutes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0%;
+  margin: 0%;
+}
+
+.medicament-atribbutes legend {
+  font-size: 10.5pt;
+}
+
+.medicament-atribbutes input {
+  font-size: 10pt;
+}
+
+.medicament-atribbutes input::placeholder {
+  font-size: 10pt;
+}
+
+.other-input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: #cdcdcd2d;
+  height: 4vh;
+  width: 25vh;
+  font-size: 10pt;
+  border-bottom-width: 1.5px;
+  border-bottom-color: #007bff;
+  color: #007bff;
+}
+
+.other-input::placeholder {
+  color: #007bffb2;
+  font-size: 8pt;
+}
+
+.medicament-inputs::placeholder {
+  color: #007bffb2;
+  font-size: 8pt;
+}
+
+.other-input:focus {
+  box-shadow: none;
+  color: #007bff;
+}
+
+legend {
+  color: #007bff;
+  font-weight: bold;
+  font-size: 13pt;
+}
+
+.medicationModal-body {
+  border: 2px solid #007bff;
+  border-radius: 1.5vh;
+  margin: 3vh;
+}
+
+.medicationModal-body input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: #007bff10;
+  height: 5vh;
+  border-bottom-width: 1.5px;
+  border-bottom-color: #007bff;
+  color: #007bff;
+}
+
+.medicationModal-body input:focus {
+  box-shadow: none;
+  border-bottom-color: #007bff;
+  color: #007bff;
+}
+
+.medicationModal-body input:-webkit-autofill {
+  -webkit-text-fill-color: #007bff !important;
+}
+
+.medicationModal-body input::selection {
+  color: #007bff;
+}
+
+.medicationModal legend {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+#field-medication {
+  padding: 1vh;
+}
+
+#field-medication label {
+  font-size: 0.9em;
+}
+
+.medicament-inputs {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: #007bff10;
+  height: 5vh;
+  border-bottom-width: 1.5px;
+  border-bottom-color: #007bff;
+  color: #007bff;
+}
+
+.medicament-inputs:focus {
+  box-shadow: none;
+  border-bottom-color: #007bff;
+  color: #007bff;
+}
+
+.medicament-inputs:-webkit-autofill {
+  -webkit-text-fill-color: #007bff !important;
+}
+
+.other-input:-webkit-autofill {
+  -webkit-text-fill-color: #007bff !important;
+}
+
+.medicament-inputs::selection {
+  color: #007bff;
+}
+
+fieldset#field-medication {
+  width: 100%;
+  font-size: 9pt;
+  font-weight: bold;
+}
+
+.div-teste {
+  width: 100%;
+  margin-top: 3vh;
+}
+
+/* Fim da estilização do modal de inserção de medicamento */

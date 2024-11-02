@@ -1,0 +1,52 @@
+@model Receituario;
+@using Hsf_Receitas.Models;
+
+@{
+    ViewData["title"] = "Vizualização de Receituário";
+}
+
+<div class="view-presc">
+
+    <div class="header-show-prescription">
+
+        <div class="header-img mt-2 mb-2">
+            <img src="../images/logotipo-hospital-sao-francisco.png" alt="logotipo da vizualização do receituário comum">
+        </div>
+
+        <div class="show-logo mt-2 mb-2">
+            <h1>RECEITUÁRIO</h1>
+            <h2>FUNDAÇÃO DE SAÚDE TRÊS MARIAS</h2>
+            <h2>HOSPITAL SÃO FRANCISCO</h2>
+        </div>
+
+    </div>
+
+    <div class="show-body mt-4">
+
+        <div class="prescription-data">
+
+            <div class="inputs">
+                <p class="m-0 p-0">NOME DO PACIENTE :</p><span id="nameP"></span>
+            </div>
+            <div class="inputs">
+                <p class="m-0 p-0">NOME DO MÉDICO :</p><span id="nameM"></span>
+            </div>
+            <div class="inputs">
+                <p class="m-0 p-0">DATA DO ATENDIMENTO :</p><span id="dataA"></span>
+            </div>
+
+        </div>
+
+        <div class="medicacoes">
+            <h3 class="text-center text-primary font-weight-bold mt-2 mb-3">MEDICAMENTOS :</h3>
+        </div>
+
+    </div>
+
+    <div class="show-footer">
+        <P>BR 040 - KM 438 - BRASÍLIA / BELO HORIZONTE - TEL.: (38) 3754-1256</P>
+        <p><span>PARQUE DIADORIM</span> - CEP: 39205-000 - TRÊS MARIAS - MINAS GERAIS</p>
+        <div class="line"></div>
+    </div>
+
+</div>

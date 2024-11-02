@@ -1,0 +1,105 @@
+@model Medicacao;
+
+@{
+    ViewData["title"] = "Adicionar Medicamentos";
+}
+
+<form name="medic-form" id="medic-form" class="">
+
+    <span class="alerta"></span>
+
+    <input class="form-control mb-3" id="medicationId" value="@Model.Id" type="hidden" asp-for="@Model.Id" disabled required>
+    <input class="form-control mb-3 addRec-recId" type="hidden" asp-for="@Model.ReceituarioId" disabled required>
+
+    <fieldset class="text-primary" id="field-medication">
+
+        <legend>Vias de Administração:</legend>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input routeAdministration" type="radio" value="Oral" name="administration" id="oral" asp-for="@Model.RouteOfAdministration">
+            <label asp-for="@Model.RouteOfAdministration" class="form-check-label" for="oral">Oral</label>
+        </div>
+                    
+        <div class="form-check form-check-inline">
+            <input class="form-check-input routeAdministration" type="radio" value="Tópico" name="administration" id="topico" asp-for="@Model.RouteOfAdministration">
+            <label asp-for="@Model.RouteOfAdministration" class="form-check-label" for="topico">Tópico</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input routeAdministration" type="radio" value="Nasal" name="administration" id="nasal" asp-for="@Model.RouteOfAdministration">
+            <label asp-for="@Model.RouteOfAdministration" class="form-check-label" for="nasal">Nasal</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input routeAdministration" type="radio" value="Ocular" name="administration" id="ocular" asp-for="@Model.RouteOfAdministration">
+            <label asp-for="@Model.RouteOfAdministration" class="form-check-label" for="ocular">Ocular</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input routeAdministration" type="radio" value="Vaginal" name="administration" id="vaginal" asp-for="@Model.RouteOfAdministration">
+            <label asp-for="@Model.RouteOfAdministration" class="form-check-label" for="vaginal">Vaginal</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input routeAdministration" type="radio" value="Retal" name="administration" id="retal" asp-for="@Model.RouteOfAdministration">
+            <label asp-for="@Model.RouteOfAdministration" class="form-check-label" for="retal">Retal</label>
+        </div>
+                
+        <div class="form-check form-check-inline">
+            <input class="form-check-input routeAdministration" type="radio" value="outros" name="administration" id="outros" asp-for="@Model.RouteOfAdministration">
+            <label class="form-check-label" asp-for="@Model.RouteOfAdministration" for="outros">Outros: </label>
+        </div>
+
+        <input placeholder="Ex: Intravenoso" class="form-control medicament-inputs" id="other" type="text">
+
+    </fieldset>
+
+        <div class="row medicament-atribbutes mt-4">
+
+            <div class="col-md-6">
+
+            <fieldset class="text-primary border-primary">
+
+                <legend>Nome do Medicamento: </legend>
+
+                <label for="medicationName" hidden></label>
+                <input placeholder="Ex: Dorflex" id="medicationName" class="form-control medicament-inputs mt-0" asp-for="@Model.MedicationName" type="text" required>
+
+            </fieldset>
+
+            <fieldset class="text-primary border-primary  mt-3">
+                        
+                <legend>Apresentação: </legend>
+
+                <label for="presentation" hidden></label>
+                <input placeholder="Ex: 50mg" id="presentation" class="form-control medicament-inputs mb-0" asp-for="@Model.Presentation" type="text" required>
+
+            </fieldset>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <fieldset class="text-primary border-primary">
+
+                <legend>Posologia: </legend>
+
+                <label for="posology" hidden></label>
+                <input placeholder="Ex: 1cp 12/12 hrs" id="posology" class="form-control medicament-inputs mb-0" asp-for="@Model.Posology" type="text" required>
+
+            </fieldset>
+
+            <fieldset class="text-primary border-primary mt-3">
+
+                <legend>Duração do Tto.: </legend>
+
+                <label for="durationTreatment" hidden></label>
+                <input placeholder="Ex: 7 - 10 dias caso sinta dor" id="durationTreatment" class="form-control medicament-inputs mb-0" asp-for="@Model.DurationOfTreatment" type="text" required>
+
+            </fieldset>
+
+        </div>
+
+    </div>
+
+</form>

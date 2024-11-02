@@ -1,0 +1,56 @@
+@model List<Medicacao>
+@using Hsf_Receitas.Services;
+
+@{
+    ViewData["title"] = "Listagem de medicamentos";
+
+    MedicacaoServices medServ = new MedicacaoServices();
+
+    ICollection<Medicacao> medicationList = medServ.ListMedication().Where(m => m.Id == m.Id).ToList();
+        
+}
+
+@if (Model.Count() > 0)
+{
+    <table class="table table-responsive table-bordered medic-list-table table-sm table-striped table-light table-hover">
+
+        <thead id="medic-list-head" class="bg-info text-light text-center">
+
+            <tr>
+                <th>Uso</th>
+                <th>Nome</th>
+                <th>Apresentação</th>
+                <th>Posologia</th>
+                <th>Duração do Tto.</th>
+            </tr>
+
+        </thead>
+
+        <tbody class="text-center">
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="border-medic p-1">@item.RouteOfAdministration</td>
+                    <td class="border-medic p-1">@item.MedicationName</td>
+                    <td class="border-medic p-1">@item.Presentation</td>
+                    <td class="border-medic p-1">@item.Posology</td>
+                    <td class="border-medic p-1">@item.DurationOfTreatment</td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-danger" type="button" data-toggle="modal" data-target=".myModal-@item.Id" title="Excluir Medicação desta Receita"><i class="bi bi-trash3-fill"></i></button>
+                    </td>
+                </tr>
+
+            }
+
+        </tbody>
+
+    </table>
+
+}
+else
+{
+    <div class="alert alert-warning w-100 text-center alert-medication mb-0" role="alert">
+        Nenhuma medicação adicionada !
+    </div>
+}

@@ -1,0 +1,274 @@
+/* Estilização da visualização do atestado médico em ATMCompletePrescription */
+
+#atm-dataAppoiment {
+    width: 25vh;
+}
+
+#atm-up-dataAppoiment {
+    width: 25vh;
+}
+
+.show-body-atm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+}
+
+.atm-title {
+    width: 85%;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    color: #007bff;
+    margin-top: 8vh;
+}
+
+.atm-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.atm-form .col-md-12 {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.atm-form .col-md-6 {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.atm-card-footer {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.atm-card-footer p {
+    margin-top: -2.3vh;
+    margin-left: -30vh;
+}
+
+.atm-title h1 {
+    font-size: 3vh;
+    font-weight: bold;
+    margin-top: 1.5%;
+}
+
+.prescription-data-atm {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+}
+
+.prescription-data-atm article {
+    margin-top: 20vh;
+}
+
+.p1 {
+    margin-left: 32vh;
+}
+
+.atm-pacient {
+    margin-top: -2%;
+    margin-bottom: 2%;
+    border-bottom: 2px solid #007bff;
+    width: 100%;
+    text-align: left;
+}
+
+.p2 {
+    margin-top: 1.5%;
+    margin-left: 2vh;
+}
+
+.atm-MedicUnity {
+    margin-bottom: 7%;
+    border-bottom: 2px solid #007bff;
+    width: 45.5vh;
+    text-align: center;
+    margin-left: 1%;
+    margin-top: -0.5%;
+}
+
+.atm-MedicUnity span {
+    margin-bottom: 0%;
+}
+
+.p3 {
+    margin-top: -3%;
+    margin-left: 2vh;
+}
+
+.atm-Data {
+    margin-bottom: 5vh;
+    border-bottom: 2px solid #007bff;
+    width: 11.9vh;
+    text-align: center;
+    margin-top: -3.5vh;
+    margin-left: 1vh;
+}
+
+.atm-Local {
+    margin-bottom: 5vh;
+    border-bottom: 2px solid #007bff;
+    width: 50vh;
+    text-align: center;
+    margin-top: -3.5vh;
+    margin-left: 1vh;
+}
+
+.p4 {
+    margin-top: -3%;
+    margin-left: 2vh;
+}
+
+.atm-Time {
+    margin-bottom: 5vh;
+    border-bottom: 2px solid #007bff;
+    width: 15vh;
+    text-align: center;
+    margin-top: -3.5vh;
+    margin-left: 1vh;
+}
+
+.atm-RestDays {
+    margin-bottom: 5vh;
+    border-bottom: 2px solid #007bff;
+    width: 15vh;
+    text-align: center;
+    margin-top: -3.5vh;
+    margin-left: 1vh;
+}
+
+.atm-article {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 0%;
+    position: absolute;
+    top: 25vh;
+    margin-top: 10vh;
+}
+
+.p5 {
+    margin-top: -3%;
+    margin-left: 2vh;
+}
+
+.att-send-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    width: 3em;
+    height: 3em;
+    border-radius: 30%;
+    margin: auto;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.att-send-button:hover {
+    box-shadow: 0px 3px 15px #007bff;
+    border-radius: 50%;
+    transition: ease-in-out 0.5s;
+}
+
+#att-save-icon {
+    margin: auto;
+    font-size: 1.5em;
+}
+
+/* @media */
+
+@media (max-width: 1920px) and (min-width: 1920px) {
+
+    .p1 {
+        margin-left: 45vh;
+    }
+
+    .atm-pacient {
+        margin-top: -2%;
+        margin-bottom: 2%;
+        border-bottom: 2px solid #007bff;
+        width: 71vh;
+        text-align: left;
+    }
+
+    .p2 {
+        margin-top: 0.8%;
+        width: 26%;
+    }
+
+    .atm-MedicUnity {
+        margin-bottom: 4%;
+        border-bottom: 2px solid #007bff;
+        width: 50.5vh;
+        text-align: center;
+        margin-left: 1%;
+        margin-top: -0.5%;
+    }
+
+    .p3 {
+        margin-top: 0%;
+    }
+
+    .atm-Local {
+        margin-bottom: 5vh;
+        border-bottom: 2px solid #007bff;
+        width: 50vh;
+        text-align: center;
+        margin-top: -1vh;
+        margin-left: 1vh;
+    }
+
+    .atm-Data {
+        margin-bottom: 5vh;
+        border-bottom: 2px solid #007bff;
+        width: 12vh;
+        text-align: center;
+        margin-top: -1vh;
+        margin-left: 1vh;
+    }
+
+    .p4 {
+        margin-top: -3.5%;
+        margin-left: 2vh;
+    }
+
+    .atm-Time {
+        margin-bottom: 5vh;
+        border-bottom: 2px solid #007bff;
+        width: 15vh;
+        text-align: center;
+        margin-top: -3.5vh;
+        margin-left: 1vh;
+    }
+
+    .atm-RestDays {
+        margin-bottom: 5vh;
+        border-bottom: 2px solid #007bff;
+        width: 10vh;
+        text-align: center;
+        margin-top: -3.5vh;
+        margin-left: 1vh;
+    }
+
+    .p5 {
+        margin-top: -3.5%;
+        margin-left: 2vh;
+    }
+
+}

@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="home-div container-fluid mb-0">
+
+    <div class="blankReport-div">
+        <a target="_blank" class="btn btn-primary btn-blankReport" aria-label="Imprima relatórios em branco !"
+            href="/Receituario/BlankPrescriptionPrintToPDF"><span class="material-symbols-outlined mr-2"> note </span>
+            Relatório em branco</a>
+    </div>
+
+    <div class="btn-index-container">
+        <div class="btn-pair">
+            <div class="btn-index mt-3">
+                <a class="btn btn-primary" asp-controller="Receituario" asp-action="Prescription">
+                    <span class="material-symbols-outlined">medical_information</span> Apenas Receituário
+                </a>
+            </div>
+
+            <div class="btn-index mt-3">
+                <a class="btn btn-primary" asp-controller="AtestadoMedico" asp-action="ATMPrescription">
+                    <span class="material-symbols-outlined">personal_injury</span> Receituário + Atestado Médico
+                </a>
+            </div>
+        </div>
+
+        <div class="btn-index mt-3">
+            <a class="btn btn-primary" asp-controller="AtestadoComparecimento" asp-action="ATCPrescription">
+                <span class="material-symbols-outlined">clinical_notes</span> Receituário + Atestado de comparecimento
+            </a>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,39 @@
+@model AtestadoMedico
+
+@{
+    ViewData["title"] = "Adicionar Atestado Médico";
+}
+
+<form id="atm-form" class="atm-form">
+
+    <span class="alerta mb-0"></span>
+
+    <input id="atmId" class="form-control" value="@Model.Id" type="hidden" asp-for="Id" disabled>
+
+    <input id="atm-receituarioId-medic" class="form-control" type="hidden"  asp-for="Id" disabled>
+
+    <div class="row mt-4">
+
+        <div class="col-md-12 mt-0">
+            <label class="text-primary" for="atm-pacientName">Nome do Paciente: </label>
+            <input type="text" id="atm-pacientName" class="form-control medicament-inputs border-primary medic-btn m-0" asp-for="PacientName" required disabled>
+        </div>
+
+        <div class="col-md-12">
+            <label class="text-primary" for="medicUnity">Unidade Médica: </label>
+            <input type="text" id="medicUnity" class="form-control medicament-inputs border-primary m-0" asp-for="MedicUnity" required>
+        </div>
+
+        <div class="col-md-6">
+            <label class="text-primary" for="restDays">Dias de repouso: </label>
+            <input type="number" id="restDays" class="form-control medicament-inputs border-primary m-0" asp-for="RestDays" required>
+        </div>
+
+        <div class="col-md-6">
+            <label class="text-primary" for="atm-cid">CID: </label>
+            <input type="text" id="atm-cid" class="form-control medicament-inputs border-primary m-0" asp-for="CID" required>
+        </div>
+
+    </div>
+
+</form>

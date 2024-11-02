@@ -1,0 +1,141 @@
+@model Receituario;
+@using Hsf_Receitas.Models;
+@using Hsf_Receitas.Data;
+
+@{
+    ViewData["title"] = "Completar Receituário";
+
+    Medicacao medic = new Medicacao();
+    HSFContext database = new HSFContext();
+
+    List<Medicacao> medicList = database.Medicamentos.Where(m => m.ReceituarioId == Model.Id).ToList();
+    List<Receituario> prescriptionList = database.Receitas.Where(m => m.Id == Model.Id).ToList();
+
+    int max = 8;
+    int restante = max - medicList.Count;
+
+}
+
+<div class="prescription container-fluid">
+
+    <div class="card register-card border-primary col-md-5 mb-4 p-0">
+
+        <div class="card-header text-light">
+
+            <h1 class="text-center">Receituário</h1>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="card border-primary">
+
+                <div class="card-header text-light ">
+                    <h5 class="font-weight-bold mb-0">Informações básicas :</h5>
+                </div>
+
+                <div class="card-body prescription-card-body">
+
+                    <form id="up-receita-form" class="prescription-form">
+
+                        <span class="mt-3 mb-3 alerta" ></span>
+
+                        <input id="up-prescriptionId" class="form-control mb-3 addRec-prescriptionId" type="hidden" asp-for="Id" disabled>
+
+                        <label class="text-primary" for="up-pacientName">Nome do Paciente: </label>
+                        <input type="text" placeholder="Ex: Márcio de Assis Cardoso" maxlength="45" minlength="8" id="up-pacientName" class="form-control border-primary mt-0 mb-3" asp-for="PacientName" required>
+
+                        <label class="text-primary" for="up-doctorName">Nome do Médico: </label>
+                        <input type="text" placeholder="Ex: Dr. Adriano Rocha" maxlength="45" minlength="8" id="up-doctorName" class="form-control border-primary mt-0 mb-3" asp-for="DoctorName" required>
+
+                        <label class="text-primary" for="up-dataAppoiment">Data da consulta: </label>
+                        <input type="date" id="up-dataAppoiment" class="form-control border-primary mt-0 mb-4" asp-for="DateOfMedicalAppoiment" required>
+
+                        <button type="submit" aria-label="Salve alterações caso tenha feito !" class="btn btn-sm btn-primary send-button btn-printer mt-3"> <span id="up-save-icon" class="material-symbols-outlined"> save </span> </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <div class="card border-primary">
+
+                <div class="card-header text-light ">
+                    <h5 class="font-weight-bold mb-0">Medicações :</h5>
+                </div>
+
+                <div class="card-body">
+
+                    <p class="text-info ml-3">Agora você pode adicionar medicamentos! <span class="text-danger font-weight-bold">@restante restantes</span> </p>
+
+                    <div class="col-md-12">
+                        @await Html.PartialAsync("/Views/Medicacao/_ListaDeMedicacao.cshtml", @medicList)
+                    </div>
+
+                </div>
+
+                <div class="row button-prescription mb-3">
+
+                    @if (medicList.Count() >= max)
+                    {
+                        <button type="button" aria-label="Máx. de medicamentos inseridos!" class="btn btn-sm btn-info btn-printer medic-btn" disabled> <span class="material-symbols-outlined"> syringe </span> Adicionar Medicamentos</button>
+                    }else {
+                        <button type="button" data-toggle="modal" data-target="#medication-modal-@Model.Id" aria-label="Inserir medicamentos à receita !" onclick="inserirRemedios()" class="btn btn-sm btn-info btn-printer"> <span class="material-symbols-outlined"> syringe </span> Adicionar Medicamentos</button>
+                    }
+
+                    @if(medicList.Count() <= 0)
+                    {
+                        <button aria-label="Insira medicamentos para imprimir!" class="btn btn-sm btn-secondary btn-printer medic-btn" disabled><span class="material-symbols-outlined mr-2"> print </span> Imprimir </button>
+                    }else {
+                        <a href="/Receituario/PrescriptionPrintToPDF?id=@Model.Id" target="_blank" aria-label="Imprimir receituário !" class="btn btn-sm btn-secondary btn-printer"><span class="material-symbols-outlined mr-2"> print </span> Imprimir </a>
+                    }
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card card-viewer border-primary col-md-5 mb-4 p-0">
+        @await Html.PartialAsync("/Views/Medicacao/_ShowMedicationList.cshtml", @Model)
+    </div>
+
+</div>
+
+<!--Start Medication Modal-->
+
+<div class="modal fade" id="medication-modal-@Model.Id" tabindex="-1" role="dialog"
+    aria-labelledby="registerUserTitle" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header bg-primary text-light text-center">
+
+                <h2 class="text-center mb-0"> Inserir Medicamento</h2>
+
+                <button type="button" class="close" data-dismiss="modal" title="Fechar">
+
+                    <span class="text-light" aria-hidden="true">&times;</span>
+
+                </button>
+
+            </div>
+
+            <div id="medicationModal-body" class="modal-body">
+                @await Html.PartialAsync("/Views/Medicacao/_MedicationRegister.cshtml", @medic)
+            </div>
+
+            <div class="modal-footer m-0 p-0">
+                <button type="submit" aria-label="Inserir !" class="btn btn-primary att-send-button buttonPOST"> <span id="att-save-icon" class="material-symbols-outlined"> save </span> </button>
+            </div>
+
+        </div>
+
+    </div>
+
+<!--Finish Medication Modal-->

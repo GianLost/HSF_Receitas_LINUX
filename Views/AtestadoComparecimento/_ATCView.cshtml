@@ -1,0 +1,148 @@
+@model Receituario;
+@using Hsf_Receitas.Models;
+@using Hsf_Receitas.Data;
+
+@{
+    ViewData["title"] = "Vizualização do atestado de comparecimento";
+
+    HSFContext database = new HSFContext();
+
+    List<Receituario> prescriptionList = database.Receitas.Where(m => m.Id ==
+    Model.Id).ToList();
+
+    List<AtestadoComparecimento> atcList = database.AtestadosComparecimento.Where(m => m.ReceituarioId ==
+    Model.Id).ToList();
+}
+
+<div class="view-presc">
+
+    <div class="header-show-prescription mt-4 ml-2">
+
+        <div class="header-img mt-2 mb-2">
+
+            <img src="../images/logotipo-hospital-sao-francisco.png" alt="logotipo da vizualização do receituário comum">
+
+        </div>
+
+        <div class="show-logo mt-2 mb-2">
+
+            <h2 style="text-decoration: underline 2px solid #007bff;">FUNDAÇÃO DE SAÚDE TRÊS MARIAS</h2>
+            <h2>HOSPITAL SÃO FRANCISCO</h2>
+
+        </div>
+
+    </div>
+
+    <div class="show-body-atm">
+
+        <div class="atm-title">
+            <h1 class="text-center">ATESTADO DE COMPARECIMENTO</h1>
+        </div>
+
+        <div class="prescription-data-atm">
+
+            @foreach (var item in atcList)
+            {
+                <article class="text-primary atc-article">
+
+                    <p class="p1-atc">Atesto para os devido fins que o(a) Sr.(a)</p>
+
+                    <div class="atc-pacient">
+                        <span class="text-center ml-2">@item.PacientName</span>
+                    </div>
+
+                    <div class="row">
+
+                        <p class="p2-atc mr-2">Compareceu ao</p>
+
+                        <div class="atc-MedicUnity">
+
+                            <span class=""></span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <p class="p3 mb-0 mr-3">do</p>
+
+                        <div class="atc-Localidade">
+                            <span class="mb-0">Hospital Municipal de Três Marias</span>
+                        </div>
+
+                    </div>
+
+                    <div class="atc-card-footer">
+
+                        <p class="p4">Para :</p>
+
+                        <div class="atc-card-footer-data">
+
+                            <div class="mt-4">
+
+                                <div class="squad-align">
+                                    <div class="squad mr-2"></div>
+                                    <span> Acompanhamento do Paciente</span>
+                                </div>
+
+                                <div class="squad-align">
+                                    <div class="squad mr-2"></div>
+                                    <span> Exame</span>
+                                </div>
+
+                                <div class="squad-align">
+                                    <div class="squad mr-2"></div>
+                                    <span> Outros :</span>
+
+                                    <div class="atc-other">
+                                        <span class=""></span>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                    <p class="p-turn">Turno :</p>
+
+                                    <div class="atc-turn">
+                                        <span class="">@item.Turno</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            @foreach (var a in prescriptionList)
+                            {
+                                <div class="row atc-date-div">
+
+                                    <p class="p-date">Data :</p>
+
+                                    <div class="atc-date">
+                                        <span class="">@a.DateOfMedicalAppoiment.ToString("dd/MM/yyyy")</span>
+                                    </div>
+
+                                </div>
+                            }
+   
+                        </div>
+
+
+                    </div>
+
+                </article>
+
+            }
+
+        </div>
+
+    </div>
+
+    <div class="show-footer">
+        <P>BR 040 - KM 438 - BRASÍLIA / BELO HORIZONTE - TEL.: (38) 3754-1256</P>
+        <p><span>PARQUE DIADORIM</span> - CEP: 39205-000 - TRÊS MARIAS - MINAS GERAIS</p>
+        <div class="line"></div>
+    </div>
+                
+</div>

@@ -1,0 +1,24 @@
+@model AtestadoComparecimento
+
+@{
+    ViewData["title"] = "Adicionar Atestado de Comparecimento";
+}
+
+<form id="atc-form" class="atc-form">
+
+    <div class="card-body">
+
+        <span class="alerta"></span>
+
+        <input id="atcId" class="form-control mb-3" value="@Model.Id" type="hidden" asp-for="Id" disabled>
+        <input id="atc-receituarioId" class="form-control mb-3" type="hidden" asp-for="Id" disabled>
+
+        <label class="text-primary" for="">Nome do Paciente: </label>
+        <input type="text" id="atc-pacientName" class="form-control medicament-inputs border-primary mb-3" asp-for="PacientName" required>
+
+        <label class="text-primary" for="">Turno: </label>
+        <input type="text" id="atc-turn" class="form-control medicament-inputs border-primary mb-3" asp-for="Turno" required>
+
+    </div>
+
+</form>

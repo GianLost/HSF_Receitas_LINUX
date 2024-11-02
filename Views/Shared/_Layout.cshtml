@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Gianluca Vialli">
+
+    <title>@ViewData["Title"] - HSF_Receituario</title>
+
+    <link rel="shortcut icon" href="~/icons/logo-hospital.bmp" type="image/x-icon" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/lib/bootstrap-icons/font/bootstrap-icons.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/footerStyle.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/navbarStyle.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/indexStyle.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/receita.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/receitaAtm.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/receitaAtc.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/medicamento.css" asp-append-version="true" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        asp-append-version="true" />
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-2 div-logo">
+
+            <div class="line-header-top"></div>
+
+            <div class="line-header-bottom">
+
+                <a asp-action="Index" asp-controller="Home">
+                    <img src="../images/logotipo-hospital-sao-francisco.png" class="hospital-logo-img"
+                        alt="Logo Hospital São francisco">
+                </a>
+
+                <div class="logotipo">
+
+                    <a class="text-logo" asp-controller="Home" asp-action="Index"> <img id="medic-logo-image"
+                            src="../icons/caduceu.png" alt=""> HSF - Receituário </a>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="contact container-fluid border-top bg-ligth bg-primary text-justify">
+
+        <div class="row p-2">
+            <div class="col-md-6">
+                <a class="col-md-12" target="_blank"
+                    href='https://www.google.com/maps/place/Hospital+S%C3%A3o+Francisco/-18.1995892,-45.2454996,14z/data=!4m6!3m5!1s0xa696124967edf5:0x49e73d2a971ee004!8m2!3d-19.9487189!4d-44.0083423!16s%2Fg%2F11kbfsnwgt'>
+                    &copy; @DateTime.Now.ToString("yyyy") - HSF Receituário - BR 040 - km 438 Brasília/BH, S/N - Bairro:
+                    Parque Diadorim - Três Marias - MG - 39205-000 </a>
+
+                <a href="tel:3837541256" target="_blank"> <span class="material-symbols-outlined"> phone_in_talk </span>
+                    (38) 3754-1256 </a>
+
+                <a href="mailto:contato@fstm.org.br" target="_blank"> <span class="material-symbols-outlined"> send
+                    </span>
+                    contato@fstm.org.br </a>
+            </div>
+
+            <div class="col-md-6">
+                <a class="col-md-12" target="_blank" href="https://www.tresmarias.mg.gov.br/">&copy; CPD - Prefeitura Municipal
+                    de Três Marias - Praça Castelo Branco, 3 - Centro, CEP: 39205-000 Três Marias/MG</a>
+                <a href="https://github.com/GianLost" target="_blank"><span class="material-symbols-outlined">
+                        developer_mode_tv
+                    </span> Desenvolvido por - Gianluca Vialli </a>
+                <a href="mailto:gianluca19993m@gmail.com" target="_blank"><span class="material-symbols-outlined"> send
+                    </span>
+                    gianluca19993m@gmail.com</a>
+
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/AddMedication.js" asp-append-version="true"></script>
+    <script src="~/js/EditATMPrescription.js" asp-append-version="true"></script>
+    <script src="~/js/EditATCPrescription.js" asp-append-version="true"></script>
+    <script src="~/js/EditPrescription.js" asp-append-version="true"></script>
+    <script src="~/js/AddPrescription.js" asp-append-version="true"></script>
+    <script src="~/js/AddATMPrescription.js" asp-append-version="true"></script>
+    <script src="~/js/AddATCPrescription.js" asp-append-version="true"></script>
+    <script src="~/js/AddATM.js" asp-append-version="true"></script>
+    <script src="~/js/AddATC.js" asp-append-version="true"></script>
+    <script src="~/js/DeleteMedication.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+# .NET Core
+bin/
+obj/
+
+# Build artifact files
+*.dll
+*.exe
+*.app
+*.dmg
+*.pkg
+*.so
+*.a
+*.o
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# macOS
+.DS_Store
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Web server folders
+node_modules/
+
+# Visual Studio files
+.vscode/
+.idea/
+
+# Log files
+Logs/
+*.log
+
+# Database files
+*.mdf
+*.ldf

@@ -1,0 +1,157 @@
+@model Receituario;
+@using Hsf_Receitas.Models;
+@using Hsf_Receitas.Data;
+
+@{
+    ViewData["title"] = "Completar Receituário";
+
+    Medicacao medic = new Medicacao();
+    HSFContext database = new HSFContext();
+
+    List<Medicacao> medicList = database.Medicamentos.Where(m => m.ReceituarioId == Model.Id).ToList();
+    List<Receituario> prescriptionList = database.Receitas.Where(m => m.Id == Model.Id).ToList();
+
+}
+
+<div class="view-presc">
+ 
+    @if (prescriptionList.Count() > 0)
+    {
+        <div class="header-show-prescription">
+
+            <div class="header-img mt-2 mb-2">
+                <img src="../images/logotipo-hospital-sao-francisco.png"alt="logotipo da vizualização do receituário comum">
+            </div>
+
+            <div class="show-logo mt-2 mb-2">
+
+                <h1>RECEITUÁRIO</h1>
+                <h2>FUNDAÇÃO DE SAÚDE TRÊS MARIAS</h2>
+                <h2>HOSPITAL SÃO FRANCISCO</h2>
+
+            </div>
+
+        </div>
+
+        <div class="show-body mt-4">
+
+            @foreach (var item in prescriptionList)
+            {
+                <div class="prescription-data">
+
+                    <div class="inputs">
+                        <p class="m-0 p-0">NOME DO PACIENTE :</p><span>@item.PacientName</span>
+                    </div>
+                    <div class="inputs">
+                        <p class="m-0 p-0">NOME DO MÉDICO :</p><span>@item.DoctorName</span>
+                    </div>
+                    <div class="inputs">
+                        <p class="m-0 p-0">DATA DO ATENDIMENTO :</p><span>@item.DateOfMedicalAppoiment.ToString("dd/MM/yyyy")</span>
+                    </div>
+
+                </div>
+            }
+
+            <div class="medicacoes">
+
+                <h3 class="text-center text-primary font-weight-bold mt-2 mb-3 ">MEDICAMENTOS :</h3>
+
+                @if (medicList.Count() > 0)
+                {
+                    <table class="text-primary list-visualization table-responsive">
+                        @foreach (var item in medicList)
+                        {
+                            <thead class="text-center font-weight-normal">
+
+                                <tr class="border-table">
+                                    <th id="routeAdministration" class="font-weight-bold p-1"><span> Vias de Administração: @item.RouteOfAdministration</span></th>
+                                </tr>
+
+                                <tr class="border-table">
+
+                                    <th class="p-1 border-line">Nome</th>
+                                    <th class="p-1 border-line">Apresentação</th>
+                                    <th class="p-1 border-line">Posologia</th>
+                                    <th class="p-1 border-line">Duração do Tto.</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody class="text-center">
+    
+                                <tr class="border-table">
+
+                                    <td class="p-1 border-line">@item.MedicationName</td>
+                                    <td class="p-1 border-line">@item.Presentation</td>
+                                    <td class="p-1 border-line">@item.Posology</td>
+                                    <td class="p-1 border-line">@item.DurationOfTreatment</td>
+
+                                </tr>
+
+                                <tr class="border-table"><td style="border-right: none;" class="p-2 ml-0 mt-3"><span style="font-size: 6pt;" class="text-primary"><b>Observações :</b></span></td></tr>
+
+                            </tbody>
+
+                            /* Start DeleteMedication Modal */
+
+                                <div class="modal fade myModal-@item.Id" tabindex="-1" role="dialog" aria-labelledby="deleteMedicationTitle" aria-hidden="true">
+
+                                    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+
+                                        <div class="modal-content">
+
+                                            <div class="modal-header bg-danger text-light text-center">
+
+                                                <h3 class="modal-title text-ligth text-center" id="deleteMedicationTitle">Alerta!</h3>
+
+                                                <button type="button" class="close" data-dismiss="modal" title="Fechar">
+                                                    <span class="text-light" aria-hidden="true">&times;</span>
+                                                </button>
+
+                                            </div>
+
+                                            <form onsubmit="deleteMedication(@item.Id)" name="medication-delete" class="medication-delete">
+
+                                                <div class="modal-body p-3">
+
+                                                    <div class="p-3 text-center">
+                                                        <span>Tem certeza que deseja excluir a medicação <b class="text-danger">@item.MedicationName</b> ?</span>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="modal-footer p-1">
+                                                    <button class="btn btn-outline-danger" type="submit" aria-label="Excluir medicação !"><i style="font-size: 20px;" class="bi bi-person-fill-x"></i></button>  
+                                                </div>
+
+                                            </form>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            /* Finish DeleteMedication Modal */
+                        }
+                    </table>
+                }
+            </div>
+
+        </div>
+
+        <div class="show-footer">
+            <P>BR 040 - KM 438 - BRASÍLIA / BELO HORIZONTE - TEL.: (38) 3754-1256</P>
+            <p><span>PARQUE DIADORIM</span> - CEP: 39205-000 - TRÊS MARIAS - MINAS GERAIS</p>
+            <div class="line"></div>
+        </div>
+
+    }else
+    {
+        <div class="alert alert-warning w-100 text-center alert-medication" role="alert">
+            Não existe uma receita para mostrar !
+        </div>
+    }
+
+</div>
