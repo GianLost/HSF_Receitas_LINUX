@@ -178,8 +178,8 @@ O serviço configurado utilizará o próprio kernel do .NET como servidor web pa
 
     ```ini
     [Unit]
-    Description=HSF_Receitas - Programa de Receituário do Hospital São Francisco de Três Marias              
-    After=network.target
+    Description=HSF_Receitas - Programa de Receituário do Hospital São Francisco de Três Marias     # Descrção para o serviço         
+    After=network.target    # Garante que o serviço será iniciado somente depois que todos os componentes e recursos de rede do sistema estiverem prontos e devidamente inicializados
 
     [Service]
     WorkingDirectory=/var/www   # Define o diretório de trabalho do serviço
